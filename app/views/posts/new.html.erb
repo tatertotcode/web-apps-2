@@ -1,6 +1,18 @@
 <h1>New Post</h1>
 
 <form action="/posts" method="post">
-  <%# add form fields %>
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <p>
+    <label for="post_author">Author</label>
+    <input type="text" name="post[author]" id="post_author">
+  </p>
+  <p>
+    <label for="post_body">Body</label>
+    <textarea name="post[body]" id="post_body"></textarea>
+  </p>
+  <p>
+    <label for="post_image">Image URL</label>
+    <input type="text" name="post[image]" id="post_image">
+  </p>
   <button>Submit</button>
 </form>
